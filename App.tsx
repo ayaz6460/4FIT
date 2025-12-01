@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from './components/Navbar';
+import Navbar from './components/NavbarComponent';
 import Hero from './components/Hero';
 import Classes from './components/Classes';
 import AITrainer from './components/AITrainer';
