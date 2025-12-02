@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './Button';
+import Reveal from './Reveal';
 
 const Hero: React.FC = () => {
   return (
@@ -15,25 +16,36 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
-        <div className="inline-block mb-4 px-4 py-1 border border-green-500/50 rounded-full bg-green-500/10 backdrop-blur-sm">
-          <span className="text-green-400 font-bold tracking-widest text-xs uppercase">India's #1 Modern Fitness Hub</span>
-        </div>
-        <h1 className="text-6xl md:text-8xl font-black text-white mb-6 tracking-tighter leading-tight">
-          FORGE YOUR <br/>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600 text-glow">ULTIMATE FORM</span>
-        </h1>
-        <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-          Experience state-of-the-art equipment, celebrity trainers, and our exclusive AI-powered workout plans right here in the heart of the city.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button onClick={() => document.getElementById('ai-trainer')?.scrollIntoView({ behavior: 'smooth'})}>
-            Try AI Trainer
-          </Button>
-          <Button variant="outline">
-            View Schedule
-          </Button>
-        </div>
+      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16 flex flex-col items-center">
+        <Reveal>
+          <div className="inline-block mb-4 px-4 py-1 border border-red-600/50 rounded-full bg-red-600/10 backdrop-blur-sm mx-auto">
+            <span className="text-red-500 font-bold tracking-widest text-xs uppercase">India's #1 Modern Fitness Hub</span>
+          </div>
+        </Reveal>
+        
+        <Reveal delay={200}>
+          <h1 className="text-6xl md:text-8xl font-black text-white mb-6 tracking-tighter leading-tight">
+            FORGE YOUR <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800 text-glow">ULTIMATE FORM</span>
+          </h1>
+        </Reveal>
+
+        <Reveal delay={400}>
+          <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+            Experience state-of-the-art equipment, celebrity trainers, and our exclusive AI-powered workout plans right here in the heart of the city.
+          </p>
+        </Reveal>
+
+        <Reveal delay={600}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button onClick={() => document.getElementById('ai-trainer')?.scrollIntoView({ behavior: 'smooth'})}>
+              Try AI Trainer
+            </Button>
+            <Button variant="outline" onClick={() => document.getElementById('schedule')?.scrollIntoView({ behavior: 'smooth'})}>
+              View Schedule
+            </Button>
+          </div>
+        </Reveal>
       </div>
       
       {/* Scroll indicator */}

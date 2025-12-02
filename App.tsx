@@ -1,14 +1,15 @@
 import React from 'react';
-import Navbar from './components/NavbarComponent';
+import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Classes from './components/Classes';
+import Schedule from './components/Schedule';
 import AITrainer from './components/AITrainer';
 import Pricing from './components/Pricing';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-black selection:bg-green-500 selection:text-black relative">
+    <div className="min-h-screen bg-black selection:bg-red-600 selection:text-white relative">
       {/* Demo Banner */}
       <div className="fixed top-0 left-0 right-0 z-[60] h-8 bg-yellow-500 flex items-center justify-center px-4">
         <p className="text-black text-[10px] md:text-xs font-black uppercase tracking-widest text-center">
@@ -35,6 +36,7 @@ const App: React.FC = () => {
       <main>
         <Hero />
         <Classes />
+        <Schedule />
         <AITrainer />
         <Pricing />
       </main>
